@@ -1,1 +1,41 @@
-<p>register works!</p>
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <form>
+        <div class="row">
+            <div class="form-group col">
+                <label for="firstname">Firstname</label>
+                <input type="text"  class="form-control" name="firstname" id="firstname">
+            </div>
+            <div class="form-group col">
+                <label for="lastname">Lastname</label>
+                <input type="text"  class="form-control" name="lastname" id="lastname">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="email">Email</label>
+                <input type="text"  class="form-control" name="email" id="email">
+            </div>
+            <div class="form-group col">
+                <label for="phone">Phone</label>
+                <input type="text"  class="form-control" name="phone" id="phone">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="password">Password</label>
+                <input type="password"  class="form-control" name="password" id="password">
+            </div>
+            <div class="form-group col">
+                <label for="repassword">Repeat password</label>
+                <input type="password"  class="form-control" name="repassword" id="repassword">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-footer></app-footer>
