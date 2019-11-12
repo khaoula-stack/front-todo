@@ -12,7 +12,12 @@
     </div>
     <div class="row">
         <div class="col">
-            <table class="table">
+            <div *ngIf="todoList.length==0" class="alert alert-warning">
+                <!--directive-->
+                Aucune Todo Trouvé
+            </div>
+            <table *ngIf="todoList.length>0" class="table">
+                <!--directive-->
                 <thead>
                     <tr>
                         <th>#</th>
@@ -22,36 +27,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>Terminer cours bootstrap 4</td>
-                        <td>09 / 11 / 2019</td>
+                    <tr *ngFor="let todo of todoList ,let i=index">
+                        <!--directive -->
+                        <th>{{i+1}}</th>
+                        <td> {{ todo.description}}</td>
+                        <td>{{ todo.dateAjout}}</td>
                         <td>
-                            <button class="btn btn-success">Terminer</button>
+                            <button class="btn btn-success" (click)="insertDone(i,todo)">Terminer</button>
                             <button class="btn btn-warning mx-3">Modifier</button>
-                            <button class="btn btn-danger">Supprimer</button>
+                            <button class="btn btn-danger" (click)="deleteTodo(i)">Supprimer</button>
+                            <!--evenement onClick -->
                         </td>
                     </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>Faire un nouveau projet angular</td>
-                        <td>09 / 11 / 2019</td>
-                        <td>
-                            <button class="btn btn-success">Terminer</button>
-                            <button class="btn btn-warning mx-3">Modifier</button>
-                            <button class="btn btn-danger">Supprimer</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td>Integration Template</td>
-                        <td>09 / 11 / 2019</td>
-                        <td>
-                            <button class="btn btn-success">Terminer</button>
-                            <button class="btn btn-warning mx-3">Modifier</button>
-                            <button class="btn btn-danger">Supprimer</button>
-                        </td>
-                    </tr>
+
+
                 </tbody>
             </table>
         </div>
@@ -69,53 +58,38 @@
         </div>
     </div>
     <div class="row">
-            <div class="col">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Description</th>
-                            <th>Date d'ajout</th>
-                            <th>Date fin</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Terminer cours Html</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>
-                            
-                                <button class="btn btn-danger">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Terminer cours Css</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>
-                    
-                                <button class="btn btn-danger">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Terminer cour js</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>09 / 11 / 2019</td>
-                            <td>
-                            
-                                <button class="btn btn-danger">Supprimer</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-    
+        <div class="col" >
+                <div *ngIf="doneList.length==0" class="alert alert-warning">
+                        <!--directive-->
+                        Aucune Done  Trouvé
+                    </div>
+            <table *ngIf="doneList.length>0" class="table" >
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>description</th>
+                        <th>date ajout</th>
+                        <th>date fin</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let done of doneList  ,let j=index">
+                        <th>{{j+1}}</th>
+                        <td>{{done.description}}</td>
+                        <td>{{done.dateAjout}}</td>
+                        <td>{{done.dateFin}}</td>
+                        <td>
+
+                            <button class="btn btn-danger" (click)="deleteDone(j)">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+    </div>
 
 </div>
 
