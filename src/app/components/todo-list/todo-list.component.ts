@@ -50,7 +50,7 @@ export class TodoListComponent implements OnInit {
   deleteDone(j: number) {
     this.doneList.splice(j, 1)
 
-  }
+  } 
 
   insertDone(i, todo) {
     this.todoList.splice(i, 1)
