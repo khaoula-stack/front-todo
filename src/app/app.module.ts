@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,6 +9,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AjouterComponent } from './components/ajouter/ajouter.component';
+import { ModifierComponent } from './components/modifier/modifier.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +21,19 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
     RegisterComponent,
     NavbarComponent,
     FooterComponent,
-    TodoListComponent
+    TodoListComponent,
+    AjouterComponent,
+    ModifierComponent,
+  
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

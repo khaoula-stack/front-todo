@@ -1,11 +1,9 @@
 <app-navbar></app-navbar>
 <div class="container mt-5 p-2">
-    <div class="row mb-3">
-        <div class="col">
-            <button class="btn btn-info">Ajouter Todo</button>
-        </div>
-    </div>
-    <div class="row">
+    <button type="button" class="btn btn-info" [routerLink]="['/ajouter']" >
+        AjouterTodo
+    </button>
+    <div class="row"> 
         <div class="col">
             <h3>Todo List</h3>
         </div>
@@ -34,7 +32,9 @@
                         <td>{{ todo.dateAjout}}</td>
                         <td>
                             <button class="btn btn-success" (click)="insertDone(i,todo)">Terminer</button>
-                            <button class="btn btn-warning mx-3">Modifier</button>
+                            <button class="btn btn-warning mx-3" [routerLink]="['/modifier']" >Modifier</button>
+                  
+                           
                             <button class="btn btn-danger" (click)="deleteTodo(i)">Supprimer</button>
                             <!--evenement onClick -->
                         </td>
@@ -58,12 +58,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col" >
-                <div *ngIf="doneList.length==0" class="alert alert-warning">
-                        <!--directive-->
-                        Aucune Done  Trouvé
-                    </div>
-            <table *ngIf="doneList.length>0" class="table" >
+        <div class="col">
+            <div *ngIf="doneList.length==0" class="alert alert-warning">
+                <!--directive-->
+                Aucune Done Trouvé
+            </div>
+            <table *ngIf="doneList.length>0" class="table">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -73,7 +73,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> 
 
                     <tr *ngFor="let done of doneList  ,let j=index">
                         <th>{{j+1}}</th>

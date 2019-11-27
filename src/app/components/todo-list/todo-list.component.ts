@@ -20,6 +20,7 @@ export class TodoListComponent implements OnInit {
       description: "Integration Template",
       dateAjout: "09 / 11 / 2019"
     }
+     
   ]
   doneList = [
     {
@@ -39,9 +40,10 @@ export class TodoListComponent implements OnInit {
       dateFin: "09 / 11 / 2019"
     }
   ]
+  displayService: any;
 
   constructor() { }
-
+ 
   ngOnInit() {
   }
   deleteTodo(i: number) {
@@ -49,6 +51,7 @@ export class TodoListComponent implements OnInit {
   }
   deleteDone(j: number) {
     this.doneList.splice(j, 1)
+
 
   } 
 
@@ -58,4 +61,9 @@ export class TodoListComponent implements OnInit {
     this.doneList.push(todo)
 
   }
+  openModal() {    
+    this.displayService.setOpenModal(true); 
+    
+}
+  
 }

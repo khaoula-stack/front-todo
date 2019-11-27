@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <form [formGroup]="addForm" (ngSubmit)="add()">
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" formControlName="description" class="form-control" name="description" id="description">
+            <div *ngIf="description.touched && description.invalid" class="form-text text-danger text-sn">
+                <div *ngIf="description.errors.required"> description required</div>
+                <div *ngIf="description.errors.pattern">invalid description</div>
+             </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+
+
+
+<app-footer></app-footer>
