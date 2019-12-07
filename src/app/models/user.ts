@@ -6,7 +6,7 @@ export class User {
         private _phone?: String,
         private _email?: String,
         private _password?: String) { }
- 
+
     get id() {
         return this._id
     }

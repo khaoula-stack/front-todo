@@ -51,7 +51,8 @@
                 <label for="repassword">Repeat password</label>
                 <input type="password" formControlName="repassword" class="form-control" name="repassword" id="repassword">
                 <div *ngIf="repassword.touched && repassword.invalid" class="form-text text-danger text-sn">
-                    <div *ngIf="repassword.errors.required"> repassword  required</div>
+                <div *ngIf="repassword.errors.required"> repassword  required</div>
+                <div *ngIf="password.value !==repassword.value">invalid confirm password</div>
                  </div>
             </div>
         </div>

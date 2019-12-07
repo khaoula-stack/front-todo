@@ -12,6 +12,8 @@ import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AjouterComponent } from './components/ajouter/ajouter.component';
 import { ModifierComponent } from './components/modifier/modifier.component';
+import { UserService } from './services/user.service';
+import {HttpClientModule}from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,11 @@ import { ModifierComponent } from './components/modifier/modifier.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
-   
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

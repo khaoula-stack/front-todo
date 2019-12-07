@@ -61,9 +61,6 @@ export class TodoListComponent implements OnInit {
     this.doneList.push(todo)
 
   }
-  openModal() {    
-    this.displayService.setOpenModal(true); 
-    
-}
+  
   
 }

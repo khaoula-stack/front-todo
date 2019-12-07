@@ -6,6 +6,7 @@
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
           name="email" formControlName="email" >
+		  
           <div *ngIf="email.touched && email.invalid" class="form-text text-danger text-sn">
              <div *ngIf="email.errors.required"> email required</div>
              <div *ngIf="email.errors.email">invalid email</div>
