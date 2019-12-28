@@ -9,11 +9,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import {ReactiveFormsModule,FormsModule} from '@angular/forms';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AjouterComponent } from './components/ajouter/ajouter.component';
 import { ModifierComponent } from './components/modifier/modifier.component';
 import { UserService } from './services/user.service';
 import {HttpClientModule}from '@angular/common/http';
+import { TodoService } from './services/todo.service';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import {HttpClientModule}from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,
+    TodoService
+    
   ],
   bootstrap: [AppComponent]
 })

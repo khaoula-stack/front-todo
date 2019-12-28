@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from "@angular/forms"
 import { User } from 'src/app/models/user';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
- 
+  
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
   get password() { return this.registerForm.get('password') }
   get repassword() { return this.registerForm.get('repassword') }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
   register() { 
     let data = this.registerForm.value
@@ -63,8 +63,8 @@ export class RegisterComponent implements OnInit {
      console.log(result.message);
      this.router.navigate(['/'])
    },(erreur)=>{
-     console.log(erreur); 
-   })
+     console.log(erreur);  
+   }) 
   }
 
 }

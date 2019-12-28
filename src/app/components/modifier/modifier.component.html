@@ -3,7 +3,7 @@
     <form [formGroup]="editForm" (ngSubmit)="edit()">
         <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" formControlName="description" class="form-control" name="description" id="description">
+            <input type="text" value="{{oldTodoDescription}}" formControlName="description" class="form-control" name="description" id="description">
             <div *ngIf="description.touched && description.invalid" class="form-text text-danger text-sn">
                 <div *ngIf="description.errors.required"> description required</div>
                 <div *ngIf="description.errors.pattern">invalid description</div>

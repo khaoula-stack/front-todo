@@ -5,6 +5,7 @@ export class Todo {
         private _description?:String,
         private _dateAjout?:String,
         private _dateFin?:String,
+        private _etat?:String,
         private _idUser?:String){}
       
 get id (){
@@ -13,6 +14,13 @@ get id (){
 }
 set id(value) {
     this._id = value
+}
+get etat (){
+    return  this._etat
+
+}
+set etat(value) {
+    this._etat = value
 }
 
 get description (){

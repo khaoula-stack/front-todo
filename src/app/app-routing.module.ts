@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { AjouterComponent } from './components/ajouter/ajouter.component';
 import { ModifierComponent } from './components/modifier/modifier.component';
+import { UserGuard } from './guards/user.guard';
 
 
 const routes: Routes = [
@@ -27,12 +28,13 @@ const routes: Routes = [
     component:AjouterComponent
   },
   {
-    path:'modifier',
+    path:'modifier/:idTodo',
     component:ModifierComponent
   },
   {
     path:'user/todo-list',
-    component:TodoListComponent
+    component:TodoListComponent,
+    canActivate:[UserGuard]
   }
 ];
 
